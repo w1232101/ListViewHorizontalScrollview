@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hsv"
+    android:layout_width="wrap_content"
+    android:layout_height="80dip"
+    android:scrollbars="none"
+   >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="11111111111" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_action"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:text="@string/action1" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dip"
+                android:layout_marginRight="2dip"
+                android:background="@android:color/darker_gray"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:text="@string/action2" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:text="@string/action3" />
+        </LinearLayout>
+    </LinearLayout>
+
+</HorizontalScrollView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ListHorScrollview</string>
+    
+    <string name="action1">添 加 </string>
+    <string name="action2">删 除 </string>
+    <string name="action3">变 色 </string>
+
+</resources>
