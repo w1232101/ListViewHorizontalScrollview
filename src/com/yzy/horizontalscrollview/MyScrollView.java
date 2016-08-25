@@ -52,6 +52,7 @@ public class MyScrollView extends ScrollView {
 	private boolean isTop = true;
 	private ValueAnimator anim;
 	private boolean isIn = false;
+	private boolean isRelease;
 
 	private void initView() {
 		addOnLayoutChangeListener(new OnLayoutChangeListener() {
@@ -63,7 +64,6 @@ public class MyScrollView extends ScrollView {
 					scrollViewMeasuredHeight = getChildAt(0).getMeasuredHeight();
 					post(new Runnable() {
 						public void run() {
-							requestLayout();
 							height = getHeight();
 						}
 					});
@@ -92,8 +92,10 @@ public class MyScrollView extends ScrollView {
 			x = (int) ev.getX();
 			y = (int) ev.getY();
 			isIn = false;
+			isRelease = false;
 			break;
 		case MotionEvent.ACTION_UP:
+			isRelease = false;
 			if (isIn) {
 
 				TranslateAnimation anim = new TranslateAnimation(0, 0, getTop(), top);
@@ -111,6 +113,12 @@ public class MyScrollView extends ScrollView {
 			int y3 = (int) ev.getY();
 			int dY = y - y3;
 			int dx = x - x3;
+			if (Math.abs(dx)>20) {
+				isRelease = true;
+			}
+			if (!isIn&&isRelease) {
+				return super.dispatchTouchEvent(ev);
+			}
 			scrollY = getScrollY();
 			if (Math.abs(dY) > Math.abs(dx) && Math.abs(dx)<5&& dY < 0 && scrollY == 0) {
 				layout(left, top - dY / 2, right, bottom - dY / 2);
